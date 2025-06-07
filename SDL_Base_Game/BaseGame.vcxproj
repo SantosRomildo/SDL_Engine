@@ -78,7 +78,7 @@
     <IncludePath>C:\dev\SDL\include;C:\dev\SDL_image\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\dev\SDL\include;C:\dev\SDL_image\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\..\SDL\include;..\..\SDL_image\include;..\SDL_Engine;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>C:\dev\SDL\include;C:\dev\SDL_image\include;$(IncludePath)</IncludePath>
@@ -119,7 +119,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\dev\SDL\include;C:\dev\PortingMaster\SDL_Engine;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\SDL\include;..\SDL_Engine;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

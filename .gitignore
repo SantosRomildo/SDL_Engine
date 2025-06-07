@@ -30,3 +30,11 @@
 *.exe
 *.out
 *.app
+
+#IDE
+.vs
+.idea
+
+/SDL_Engine/x64/Debug
+/SDL_Base_Game/BaseGame/x64/Debug
+/SDL_Base_Game/x64/Debug

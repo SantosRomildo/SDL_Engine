@@ -1,8 +1,7 @@
-#include <SDL3/SDL.h>
-#include <SDL3/SDL_main.h>
 #include <string>
 #include "LTexture.h"
 #include "EngineInitialization.h"
+#include <SDL_Engine_Log.h>
 
 /* Constants*/
 //The PNG image we will render
@@ -18,13 +17,13 @@ bool loadMedia()
 	success = gFooTexture.loadFromFile("data/images/foo.png", gRenderer);
 	if (!success)
 	{
-		SDL_Log("Unable to load foo image!\n");
+		SDL_Engine_Log(LOG_ERROR, "Unable to load foo image!\n");
 	}
 
 	success = gBackgroundTexture.loadFromFile("data/images/background.png", gRenderer);
 	if (!success)
 	{
-		SDL_Log("Unable to load background image!\n");
+		SDL_Engine_Log(LOG_ERROR, "Unable to load background image!\n");
 	}
 	return success;
 }
@@ -37,7 +36,7 @@ int main(int argc, char* args[])
 	//Initialize
 	if (!initEngine("SDL Tutorial"))
 	{
-		SDL_Log("Unable to initialize program!\n");
+		SDL_Engine_Log(LOG_ERROR, "Unable to initialize program!\n");
 		exitCode = 1;
 	}
 	else
@@ -45,7 +44,7 @@ int main(int argc, char* args[])
 		//Load media
 		if (!loadMedia())
 		{
-			SDL_Log("Unable to load media!\n");
+			SDL_Engine_Log(LOG_ERROR, "Unable to load media!\n");
 			exitCode = 2;
 		}
 		else
@@ -73,19 +72,19 @@ int main(int argc, char* args[])
 						//Set texture
 						if (e.key.key == SDLK_UP)
 						{
-							SDL_Log("Press Key: UP\n");
+							SDL_Engine_Log(LOG_INFO, "Press Key: UP\n");
 						}
 						else if (e.key.key == SDLK_DOWN)
 						{
-							SDL_Log("Press Key: Down\n");
+							SDL_Engine_Log(LOG_INFO, "Press Key: Down\n");
 						}
 						else if (e.key.key == SDLK_LEFT)
 						{
-							SDL_Log("Press Key: Left\n");
+							SDL_Engine_Log(LOG_INFO, "Press Key: Left\n");
 						}
 						else if (e.key.key == SDLK_RIGHT)
 						{
-							SDL_Log("Press Key: Right\n");
+							SDL_Engine_Log(LOG_INFO, "Press Key: Right\n");
 						}
 					}
 				}
